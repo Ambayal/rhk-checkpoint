@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import MovieCard from './components/MovieCard';
-import MovieList from './components/MovieList';
-import Filter from './components/Filter';
+import { Route,Routes } from 'react-router-dom';
+import Details from './components/Details';
 
 
 function App() {
   return (
     <>
-    <MovieCard/>
+    <div>
+
+    <Routes>
+      <Route path='/'element={ <MovieCard/>}/>
+      <Route path="/movie/:id" element={<Details/>}/>
+    </Routes>
+    </div>
     </>
   );
 
